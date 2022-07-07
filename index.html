@@ -80,8 +80,14 @@
 
             var party = SmokeMachine(ctx, [54, 16.8, 18.2])
 
+
             party.start() // start animating
-            party.addSmoke(500, 1000, 200) // wow we made smoke
+            //party.addSmoke(500, 1000, 200) // wow we made smoke
+            party.setPreDrawCallback(function(dt){
+		party.addSmoke(500, 1000, 3)
+		canvas.width = 1000
+            canvas.height = 1000
+	})
             TweenLite.set('.kalerb', { scale: .5, bottom: -200 })
             TweenLite.to('.kalerb', 3, { bottom: 0, scale: 1, opacity: 1, delay: 2 })
             TweenLite.to('.maintitle', 2, { opacity: 1, delay: 5 })
