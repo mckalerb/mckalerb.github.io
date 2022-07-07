@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #canvas {
+            margin: 0 auto;
+            height: 100vh;
+            display: block;
+        }
+
+        .kalerb {
+            width: 500px;
+            height: 846px;
+            background-image: url('./kalerb.png');
+            position: absolute;
+            bottom: 0;
+            left: calc(50% - 250px);
+            opacity:0;
+        }
+        h1,h2{
+            margin:0 auto;
+            display:block;
+            text-align:center;
+            opacity:0;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js" integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/CSSRulePlugin.min.js" integrity="sha512-oYnRsy+bFXYr+btXcKk2dpzfERnCUc5G4GkJ0AO/XSvomLV7Xc7tZVhTsYIz9QzOAw9qo/6qoA6JTpzaYuHUGg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./smoke.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1 class="maintitle">YOU HAVE FOUND THE SMOKE</h1>
+    <h2 class="subtitle">NOW YOU WILL GET SMOKED</h2>
+    <div class="artboard">
+        <canvas id="canvas"></canvas>
+        <div class="kalerb">
+
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            var canvas = document.getElementById('canvas')
+            var ctx = canvas.getContext('2d')
+            canvas.width = 1000
+            canvas.height = 1000
+
+            var party = SmokeMachine(ctx, [54, 16.8, 18.2])
+
+            party.start() // start animating
+            party.addSmoke(500, 1000, 200) // wow we made smoke
+            TweenLite.set('.kalerb',{scale:.5})
+            TweenLite.to('.kalerb',3,{scale:1,opacity:1, delay:2})
+            TweenLite.to('.maintitle',2,{opacity:1,delay:5})
+            TweenLite.to('.subtitle',2,{opacity:1,delay:7})
+        });
+    </script>
+</body>
+
+</html>
