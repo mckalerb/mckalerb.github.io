@@ -8,18 +8,19 @@
     <meta property="og:title" content="Find the Smoke" />
     <meta property="og:description" content="If you find the smoke, you will get smoked" />
     <meta property="og:image" content="./kalerb.png" />
-    <link rel="apple-touch-icon" sizes="144x144" href="./apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
-    <link rel="manifest" href="./site.webmanifest">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
     <title>Find the Smoke</title>
     <style>
         * {
             margin: 0;
             padding: 0;
-            overflow: hidden;
+            overflow:hidden;
         }
 
         #canvas {
@@ -80,8 +81,8 @@
 
             party.start() // start animating
             party.addSmoke(500, 1000, 200) // wow we made smoke
-            TweenLite.set('.kalerb', { scale: .5, bottom: -200 })
-            TweenLite.to('.kalerb', 3, { bottom: 0, scale: 1, opacity: 1, delay: 2 })
+            TweenLite.set('.kalerb', { scale: .5,bottom:-200 })
+            TweenLite.to('.kalerb', 3, {bottom:0, scale: 1, opacity: 1, delay: 2 })
             TweenLite.to('.maintitle', 2, { opacity: 1, delay: 5 })
             TweenLite.to('.subtitle', 2, { opacity: 1, delay: 7 })
         });
